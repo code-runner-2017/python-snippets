@@ -1,16 +1,17 @@
-# %s - String (or any object with a string representation, like numbers)
-# %d - Integers
-# %f - Floating point numbers
-# %.<number of digits>f - Floating point numbers with a fixed amount of digits to the right of the dot.
-# %x/%X - Integers in hex representation (lowercase/uppercase)
 
+quantity = 3
+itemno = 567
+price = 49
+myorder = "I want {} pieces of item number {} for {:.2f} dollars."
+
+print(myorder.format(quantity, itemno, price))  # I want 3 pieces of item number 567 for 49.00 dollars.
+
+# indexes
+age = 36
 name = "John"
-print("Hello, %s!" % name)
+txt = "His name is {1}. {1} is {0} years old."
+print(txt.format(age, name))   # His name is John. John is 36 years old.
 
-mylist = [1,2,3]
-print("A list: %s" % mylist)
-
-data = ("John", "Doe", 53.44)
-format_string = "Hello %s %s. Your current balance is $%s."
-
-print(format_string % data)
+# named indexes
+myorder = "I have a {carname}, it is a {model}."
+print(myorder.format(carname = "Ford", model = "Mustang"))  # I have a Ford, it is a Mustang.
